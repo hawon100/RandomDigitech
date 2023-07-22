@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TileManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class TileManager : MonoBehaviour
     public Transform[] pos;
     public const int tileWidth = 5;
     public Tower[] towers;
+    public int dmg;
 
     private void Awake()
     {
@@ -65,7 +67,6 @@ public class TileManager : MonoBehaviour
         Tower tower = gO.GetComponent<Tower>();
         tower.spawnManager = spawnManager;
 
-        if(spawnManager.enemies[0] != null) tower.enemyObj = spawnManager.enemies[0].gameObject;
         tower.Init(data, posInt);
         towers[tileWidth * posInt.y + posInt.x] = tower;
     }

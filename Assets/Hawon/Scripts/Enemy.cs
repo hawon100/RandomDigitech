@@ -28,10 +28,9 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             SpawnManager._Instance.enemies.Remove(this);
+            Scene_InGame._Instance.life -= 1;
             return;
         }
-
-        Debug.Log(Num);
 
         transform.position = Vector2.MoveTowards(transform.position, pos[Num].transform.position, speed * Time.deltaTime);
 
@@ -46,7 +45,15 @@ public class Enemy : MonoBehaviour
         health -= dmg;
         if(health <= 0)
         {
+            SpawnManager._Instance.enemies.Remove(this);
             Destroy(gameObject);
+            SpawnManager._Instance.enemyKillCount += 1;
+            if (gameObject.name == "boss 0" || gameObject.name == "boss 1" || gameObject.name == "boss 2")
+            {
+                SpawnManager._Instance.curEnemyCount = 0;
+                SpawnManager._Instance.stage += 1;
+                SpawnManager._Instance.curSpawnDelay -= 0.15f;
+            }
         }
     }
 

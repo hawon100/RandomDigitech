@@ -335,7 +335,7 @@ MonoBehaviour:
   spawnManager: {fileID: 0}
   bulletObj: {fileID: 5637912753614435124, guid: 440325f0c586cc8468d5dc83d662a4a1, type: 3}
   curShotDelay: 0
-  maxShotDelay: 2
+  maxShotDelay: 1
   enemyObj: {fileID: 0}
   data: {fileID: 0}
   tilePosition: {x: 0, y: 0}

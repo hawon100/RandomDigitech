@@ -31,8 +31,20 @@ public class Tower : MonoBehaviour
 
     private void Fire()
     {
+        float shortDis = 10000;
+
         if (curShotDelay < maxShotDelay)
             return;
+
+        foreach(var found in SpawnManager._Instance.enemies)
+        {
+            float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
+            if(Distance < shortDis)
+            {
+                enemyObj = found.gameObject;
+                shortDis = Distance;
+            }
+        }
 
         if (enemyObj == null)
             return;
