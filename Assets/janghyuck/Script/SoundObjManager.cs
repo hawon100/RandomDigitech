@@ -14,7 +14,6 @@ public class SoundObjManager : MonoBehaviour
     private void Awake()
     {
         musicsource.volume = musicvolume;
-        //effectsource.volume = effectvolume;
         var objs = FindObjectsOfType<SoundObjManager>();
         if (objs.Length == 1)
         {
@@ -27,8 +26,15 @@ public class SoundObjManager : MonoBehaviour
         }
     }
 
+    public void Sfx()
+    {
+        SoundManager._Instance.SFXPlay("Button", effectClip, effectvolume);
+    }
+
     public void SetSFX(float volume)
     {
         SoundManager._Instance.SFXPlay("Button", effectClip, volume);
+
+        effectvolume = volume;
     }
 }

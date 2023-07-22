@@ -2,6 +2,7 @@ using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Scene_InGame : MonoBehaviour
@@ -10,15 +11,21 @@ public class Scene_InGame : MonoBehaviour
 
     public TowerData[] towerDatas;
     public Text moneyText;
-    public Image[] lifeImage;
+    public Text lifeText;
+    public Text killText;
     public GameObject GameOverWin;
+
+    public GameObject escapeWin;
 
     public int life;
     int buyNum;
     int money;
 
+    bool isActive;
+
     private void Start()
     {
+        isActive = false;
         GameOverWin.SetActive(false);
         _Instance = this;
         life = 3;
@@ -30,6 +37,8 @@ public class Scene_InGame : MonoBehaviour
     private void Update()
     {
         moneyText.text = "$ " + money.ToString();
+        lifeText.text = "life " + life.ToString();
+        killText.text = "Kill: " + SpawnManager._Instance.enemyKillCount.ToString();
 
         if (money <= 0)
         {
@@ -41,13 +50,33 @@ public class Scene_InGame : MonoBehaviour
             Time.timeScale = 0;
             GameOverWin.SetActive(true);
         }
+        escapeWin.SetActive(isActive);
+        Escape();
+    }
+
+    private void Escape()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            isActive = !isActive;
+        }
+    }
+
+    public void Home()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    public void Close()
+    {
+        isActive = false;
     }
 
     private IEnumerator MoneyGive()
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             money += 10;
         }
     }

@@ -7,6 +7,6 @@ public class UIController : MonoBehaviour
 {
     public void OnClickHome()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Main");
     }
 }
