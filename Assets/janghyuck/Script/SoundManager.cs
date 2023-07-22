@@ -8,16 +8,12 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip audioClip;
 
-    public void SetSFX()
-    {
-        SFXPlay("Button", audioClip);
-    }
-
-    public void SFXPlay(string name, AudioClip clip)
+    public void SFXPlay(string name, AudioClip clip, float volume)
     {
         GameObject go = new GameObject(name + "sound");
         AudioSource audioSource = go.AddComponent<AudioSource>();
         audioSource.clip = clip;
+        audioSource.volume = volume;
         audioSource.Play();
 
         Destroy(go, clip.length);

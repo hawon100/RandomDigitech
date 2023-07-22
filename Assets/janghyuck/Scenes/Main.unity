@@ -468,10 +468,10 @@ MonoBehaviour:
           m_StringArgument: setting
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1077087580}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+      - m_Target: {fileID: 978598210}
+        m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
         m_MethodName: SetSFX
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -765,8 +765,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 978598210}
-        m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
+      - m_Target: {fileID: 1656076562}
+        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
@@ -1546,7 +1546,8 @@ Transform:
   m_LocalPosition: {x: 967.49805, y: 501.23505, z: -7.735944}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1877221779}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1563,6 +1564,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicsource: {fileID: 1877221778}
+  effectClip: {fileID: 0}
+  musicvolume: 1
+  effectvolume: 1
 --- !u!1 &1049209256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,10 +1663,10 @@ MonoBehaviour:
           m_StringArgument: exit
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1077087580}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+      - m_Target: {fileID: 978598210}
+        m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
         m_MethodName: SetSFX
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1976,10 +1980,10 @@ MonoBehaviour:
           m_StringArgument: credit
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1077087580}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+      - m_Target: {fileID: 978598210}
+        m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
         m_MethodName: SetSFX
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2280,10 +2284,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1077087580}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+      - m_Target: {fileID: 978598210}
+        m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
         m_MethodName: SetSFX
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2502,10 +2506,10 @@ MonoBehaviour:
           m_StringArgument: exit
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1077087580}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+      - m_Target: {fileID: 978598210}
+        m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
         m_MethodName: SetSFX
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2799,6 +2803,7 @@ GameObject:
   - component: {fileID: 1656076561}
   - component: {fileID: 1656076560}
   - component: {fileID: 1656076559}
+  - component: {fileID: 1656076562}
   m_Layer: 5
   m_Name: Setting
   m_TagString: Untagged
@@ -2883,10 +2888,10 @@ MonoBehaviour:
           m_StringArgument: setting
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1077087580}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+      - m_Target: {fileID: 978598210}
+        m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
         m_MethodName: SetSFX
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2933,6 +2938,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656076557}
   m_CullTransparentMesh: 1
+--- !u!114 &1656076562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656076557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c53fbd0ad5e02f4ba4e7a2c60eb6f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicSlider: {fileID: 344031535}
 --- !u!1 &1678111629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,10 +3275,10 @@ MonoBehaviour:
           m_StringArgument: credit
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1077087580}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+      - m_Target: {fileID: 978598210}
+        m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
         m_MethodName: SetSFX
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3318,7 +3336,7 @@ GameObject:
   - component: {fileID: 1856760358}
   - component: {fileID: 1856760359}
   m_Layer: 5
-  m_Name: EpectSlider
+  m_Name: EffectSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3394,13 +3412,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 978598210}
         m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+        m_MethodName: SetSFX
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3531,12 +3549,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877221777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 967.49805, y: 501.23505, z: -7.735944}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 978598209}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881595692
 GameObject:
