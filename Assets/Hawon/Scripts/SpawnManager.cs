@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private Transform[] pos;
 
-    private List<Enemy> enemies = new List<Enemy>();
+    public List<Enemy> enemies = new List<Enemy>();
 
     private int allEnemyCount; //총 적 개수
 
@@ -27,36 +27,15 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        enemyCount = defaultEnemyCount;
-    }
-
-    private void Update()
-    {
-        if (Scene_InGame._Instance != null)
-        {
-            return;
-        }
-
-        allEnemyCount = enemies.Count;
-
-        if (allEnemyCount <= 0)
-        {
-            SpawnWave();
-        }
-
+        SpawnWave();
     }
 
     void SpawnWave()
     {
-        for (int i = 0; i < pos.Length; i++)
-        {
-            Transform spawnPoint = pos[i];
-
-            CreateEnemy(spawnPoint);
-        }
+        CreateEnemy();
     }
 
-    void CreateEnemy(Transform spawnPoint)
+    void CreateEnemy()
     {
         for (int i = 0; i < enemyCount; i++)
         {
@@ -65,23 +44,21 @@ public class SpawnManager : MonoBehaviour
             GameObject enemy = Instantiate(enemyObj, pos[0].position, Quaternion.identity);
             Enemy enemyLogic = enemy.GetComponent<Enemy>();
 
+            for (int j = 0; j < pos.Length; j++)
+            {
+                if (enemyLogic.pos[j] == null)
+                {
+                    enemyLogic.pos[j] = pos[j];
+                }
+            }
+
             //생성된 적을 리스트에 추가
             enemies.Add(enemyLogic);
+
+            if (transform.position == pos[4].transform.position)
+            {
+                enemies.RemoveAt(0);
+            }
         }
     }
-
-    //private IEnumerator Spawn()
-    //{
-    //    yield return new WaitForSeconds(4f);
-
-    //    GameObject enemy = Instantiate(enemyObj, pos[0].position, Quaternion.identity);
-    //    Enemy enemyLogic = enemy.GetComponent<Enemy>();
-    //    for (int i = 0; i < pos.Length; i++)
-    //    {
-    //        if (enemyLogic.pos[i] == null)
-    //        {
-    //            enemyLogic.pos[i] = pos[i];
-    //        }
-    //    }
-    //}
 }

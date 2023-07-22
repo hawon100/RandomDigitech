@@ -347,6 +347,10 @@ MonoBehaviour:
   - {fileID: 2113157180}
   - {fileID: 2083749252}
   - {fileID: 2087781268}
+  enemies: []
+  defaultEnemyCount: 2
+  enemyCount: 1
+  addEnemyCount: 0
 --- !u!1 &490268352
 GameObject:
   m_ObjectHideFlags: 0

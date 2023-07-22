@@ -22,10 +22,13 @@ public class Enemy : MonoBehaviour
         {
             Num++;
         }
+    }
 
-        if (Num == pos.Length)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Bullet"))
         {
-            Destroy(gameObject);
+            
         }
     }
 }
