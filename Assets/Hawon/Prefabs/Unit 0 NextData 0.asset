@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b4a139c722205d4580ddf3f4f2d581e, type: 3}
-  m_Name: Unit 1 Data
+  m_Name: Unit 0 NextData 0
   m_EditorClassIdentifier: 
-  name: Circle
+  name: 
   atkSpeed: 0
-  unit: {fileID: 8683699937186151663, guid: 98cf4b9318b212144b7dbc147b5579a3, type: 3}
+  unit: {fileID: 8683699937186151663, guid: 4535e244c9314e540babb71c3a66c5b7, type: 3}
+  nextTowerData: {fileID: 11400000, guid: 9139c2a7848c2304c8cec2b13077e6c1, type: 2}

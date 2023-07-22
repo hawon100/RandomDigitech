@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Scene_InGame : MonoBehaviour
 {
+    public static Scene_InGame _Instance {  get; private set; }
+
     public TowerData[] towerDatas;
 
     public void OnClickBuyButton()

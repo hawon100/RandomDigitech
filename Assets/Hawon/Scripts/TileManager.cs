@@ -6,6 +6,8 @@ public class TileManager : MonoBehaviour
 {
     public static TileManager Instance { get; private set; }
 
+    public SpawnManager spawnManager;
+
     public GameObject unit;
     public Transform[] pos;
     public const int tileWidth = 5;
@@ -17,16 +19,17 @@ public class TileManager : MonoBehaviour
         towers = new Tower[pos.Length];
     }
 
-    public Tower RemoveTower(Tower tower, Vector2Int posInt)
+    public void RemoveTower(Tower tower)
     {
-        return towers[tileWidth * posInt.y + posInt.x] = null;
+        towers[tileWidth * tower.tilePosition.y + tower.tilePosition.x] = null;
+        Destroy(tower.gameObject);
     }
 
     public Tower FindMergeTarget(Tower tower)
     {
         for(int i = 0; i < towers.Length; i++)
         {
-            if (towers[i].data == tower.data && towers[i] != tower) return tower;
+            if (towers[i] != null && towers[i].data == tower.data && towers[i] != tower) return towers[i];
         }
         return null;
     }
@@ -60,6 +63,8 @@ public class TileManager : MonoBehaviour
     {
         GameObject gO = Instantiate(data.unit, GetTile(posInt).position, Quaternion.identity);
         Tower tower = gO.GetComponent<Tower>();
+        tower.spawnManager = spawnManager;
+        tower.enemyObj = spawnManager.enemyObj;
         tower.Init(data, posInt);
         towers[tileWidth * posInt.y + posInt.x] = tower;
     }
