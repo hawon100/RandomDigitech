@@ -11,16 +11,17 @@ public class UIManager : MonoBehaviour
     public GameObject creditUI;
     public GameObject exitUI;
 
-    bool isActivecredit;
-    bool isActivesetting;
-    bool isActiveexit;
+
+    bool issetting;
+    bool iscredit;
+    bool isexit;
     public void ButtonUI(string uiName)
     {
         switch (uiName)
         {
-            case "setting": isActivesetting = true; break;
-            case "credit": isActivecredit = true; break;
-            case "exit": isActiveexit = true; break;
+            case "setting": issetting = true; break;
+            case "credit": iscredit = true; break;
+            case "exit": isexit = true; break;
         }
     }
 
@@ -28,42 +29,42 @@ public class UIManager : MonoBehaviour
     {
         switch (uiName)
         {
-            case "setting": isActivesetting = false; break;
-            case "credit": isActivecredit = false; break;
-            case "exit": isActiveexit = false; break;
+            case "setting": issetting = false; break;
+            case "credit": iscredit = false; break;
+            case "exit": isexit = false; break;
         }
     }
 
-    private void Start()
+    void Start()
     {
-        isActivesetting = false;
-        isActivecredit = false;
-        isActiveexit = false;
+        issetting = false;
+        iscredit = false;
+        isexit = false;
     }
 
-    private void Update()
+    void Update()
     {
-        if (isActivesetting)
+        if (issetting)
         {
             Scenes[0].anchoredPosition = Vector3.Lerp(Scenes[0].anchoredPosition, posSquareOne, 0.1f);
         }
-        if (!isActivesetting)
+        if (!issetting)
         {
             Scenes[0].anchoredPosition = Vector3.Lerp(Scenes[0].anchoredPosition, pos, 0.1f);
         }
-        if (isActivecredit)
+        if (iscredit)
         {
             Scenes[1].anchoredPosition = Vector3.Lerp(Scenes[1].anchoredPosition, posSquareOne, 0.1f);
         }
-        if (!isActivecredit)
+        if (!iscredit)
         {
             Scenes[1].anchoredPosition = Vector3.Lerp(Scenes[1].anchoredPosition, pos, 0.1f);
         }
-        if (isActiveexit)
+        if (isexit)
         {
             Scenes[2].anchoredPosition = Vector3.Lerp(Scenes[2].anchoredPosition, posSquareOne, 0.1f);
         }
-        if (!isActiveexit)
+        if (!isexit)
         {
             Scenes[2].anchoredPosition = Vector3.Lerp(Scenes[2].anchoredPosition, pos, 0.1f);
         }

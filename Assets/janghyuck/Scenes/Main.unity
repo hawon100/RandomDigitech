@@ -278,7 +278,7 @@ MonoBehaviour:
   - {fileID: 1428451234}
   - {fileID: 1193781287}
   - {fileID: 925447297}
-  buttonUI: {fileID: 1428451233}
+  settingUI: {fileID: 1428451233}
   creditUI: {fileID: 1193781286}
   exitUI: {fileID: 925447294}
 --- !u!4 &28327551
@@ -294,7 +294,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &50411299
 GameObject:
@@ -765,8 +765,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BgmManager, Assembly-CSharp
+      - m_Target: {fileID: 978598210}
+        m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
@@ -904,7 +904,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -912,14 +911,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1248,6 +1239,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683664427}
   m_CullTransparentMesh: 1
+--- !u!1 &812680187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 812680189}
+  - component: {fileID: 812680188}
+  m_Layer: 0
+  m_Name: SoundListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &812680188
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812680187}
+  m_Enabled: 1
+--- !u!4 &812680189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812680187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &925137675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +1529,7 @@ GameObject:
   - component: {fileID: 978598209}
   - component: {fileID: 978598210}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: SoundObjManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1517,7 +1548,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &978598210
 MonoBehaviour:
@@ -1749,7 +1780,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1773,14 +1804,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1297074252}
-  - {fileID: 1832895346}
   - {fileID: 1656076558}
+  - {fileID: 1832895346}
   - {fileID: 1346987544}
-  - {fileID: 1193781287}
   - {fileID: 1428451234}
+  - {fileID: 1193781287}
   - {fileID: 925447297}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2007,7 +2038,7 @@ GameObject:
   - component: {fileID: 1193781289}
   - component: {fileID: 1193781288}
   m_Layer: 5
-  m_Name: inDevelopers
+  m_Name: inCredit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2028,7 +2059,7 @@ RectTransform:
   - {fileID: 1131345944}
   - {fileID: 593311265}
   m_Father: {fileID: 1077087578}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2555,7 +2586,7 @@ RectTransform:
   - {fileID: 344031534}
   - {fileID: 1856760358}
   m_Father: {fileID: 1077087578}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2789,11 +2820,11 @@ RectTransform:
   m_Children:
   - {fileID: 345711530}
   m_Father: {fileID: 1077087578}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 520, y: -269}
+  m_AnchoredPosition: {x: 520, y: -125}
   m_SizeDelta: {x: 518.99, y: 103.8074}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1656076559
@@ -3048,7 +3079,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1767816684
 GameObject:
@@ -3163,11 +3194,11 @@ RectTransform:
   m_Children:
   - {fileID: 1985837684}
   m_Father: {fileID: 1077087578}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 520, y: -125}
+  m_AnchoredPosition: {x: 520, y: -270}
   m_SizeDelta: {x: 523.41, y: 104.6908}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1832895347
@@ -3367,9 +3398,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: SetButtonVolume
+      - m_Target: {fileID: 978598210}
+        m_TargetAssemblyTypeName: SoundObjManager, Assembly-CSharp
+        m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3390,7 +3421,7 @@ GameObject:
   - component: {fileID: 1877221779}
   - component: {fileID: 1877221778}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: MainSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3505,7 +3536,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881595692
 GameObject:
@@ -3615,7 +3646,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Developers
+  m_Text: Credit
 --- !u!222 &1985837686
 CanvasRenderer:
   m_ObjectHideFlags: 0
