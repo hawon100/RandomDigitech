@@ -12,13 +12,7 @@ public class SpawnManager : MonoBehaviour
 
     public List<Enemy> enemies = new List<Enemy>();
 
-    private int allEnemyCount; //총 적 개수
-
-    public int defaultEnemyCount = 2;
-
     public int enemyCount;
-
-    public int addEnemyCount = 3;
 
     private void Awake()
     {
@@ -54,11 +48,6 @@ public class SpawnManager : MonoBehaviour
 
             //생성된 적을 리스트에 추가
             enemies.Add(enemyLogic);
-
-            if (transform.position == pos[4].transform.position)
-            {
-                enemies.RemoveAt(0);
-            }
         }
     }
 }
