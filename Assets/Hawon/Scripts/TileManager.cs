@@ -64,7 +64,8 @@ public class TileManager : MonoBehaviour
         GameObject gO = Instantiate(data.unit, GetTile(posInt).position, Quaternion.identity);
         Tower tower = gO.GetComponent<Tower>();
         tower.spawnManager = spawnManager;
-        tower.enemyObj = spawnManager.enemies[0].gameObject;
+
+        if(spawnManager.enemies[0] != null) tower.enemyObj = spawnManager.enemies[0].gameObject;
         tower.Init(data, posInt);
         towers[tileWidth * posInt.y + posInt.x] = tower;
     }

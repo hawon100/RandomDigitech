@@ -348,9 +348,7 @@ MonoBehaviour:
   - {fileID: 2083749252}
   - {fileID: 2087781268}
   enemies: []
-  defaultEnemyCount: 2
   enemyCount: 1
-  addEnemyCount: 0
 --- !u!1 &490268352
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerDatas:
   - {fileID: 11400000, guid: a13a82351a94ac442a52d59b972f6a49, type: 2}
+  - {fileID: 11400000, guid: fe56afa6c40bff94f95631d32a337c21, type: 2}
 --- !u!1 &1308038339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1155,7 @@ GameObject:
   m_Layer: 0
   m_Name: pos
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1311,7 +1310,7 @@ GameObject:
   m_Layer: 0
   m_Name: pos (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1342,7 +1341,7 @@ GameObject:
   m_Layer: 0
   m_Name: pos (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1373,7 +1372,7 @@ GameObject:
   m_Layer: 0
   m_Name: pos (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
