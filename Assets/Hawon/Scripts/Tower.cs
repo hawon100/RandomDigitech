@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
@@ -33,10 +34,13 @@ public class Tower : MonoBehaviour
         if (curShotDelay < maxShotDelay)
             return;
 
+        if (enemyObj == null)
+            return;
+
         GameObject bullet = Instantiate(bulletObj, transform.position, Quaternion.identity);
         Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
         Vector3 dirVec = enemyObj.transform.position - transform.position;
-        rigid.AddForce(dirVec.normalized * 5f, ForceMode2D.Impulse);
+        rigid.AddForce(dirVec.normalized * 20f, ForceMode2D.Impulse);
 
         curShotDelay = 0;
     }
