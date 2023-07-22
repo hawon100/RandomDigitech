@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class SoundObjManager : MonoBehaviour
 {
-    public static SoundObjManager instance {  get; private set; }
+    public static SoundObjManager Instance { get; private set; }
 
-    public GameObject soundManager;
-    public GameObject audioSource;
+    public AudioSource musicsource;
 
-    void Awake() 
+    private void Awake()
     {
-        if (instance != null)
+        var objs = FindObjectsOfType<SoundObjManager>();
+        if (objs.Length == 1)
         {
-            Destroy(gameObject);
-            return;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
         }
     }
+
+    public void SetMusicVolume(float volume)
+    {
+        musicsource.volume = volume;
+    }
+
 }
