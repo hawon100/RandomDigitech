@@ -6,14 +6,16 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager _Instance { get; private set; }
 
-    public AudioClip audioClip;
+    private void Start()
+    {
+        _Instance = this;
+    }
 
-    public void SFXPlay(string name, AudioClip clip, float volume)
+    public void SFXPlay(string name, AudioClip clip)
     {
         GameObject go = new GameObject(name + "sound");
         AudioSource audioSource = go.AddComponent<AudioSource>();
         audioSource.clip = clip;
-        audioSource.volume = volume;
         audioSource.Play();
 
         Destroy(go, clip.length);

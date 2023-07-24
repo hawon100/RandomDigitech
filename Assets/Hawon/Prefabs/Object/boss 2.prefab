@@ -104,8 +104,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 2
+  speed: 0
   health: 0
+  hitSound: {fileID: 8300000, guid: 6b5c3f6d0e963e14fbe89579a2203513, type: 3}
+  lifeDecreaseSound: {fileID: 8300000, guid: 09a62ebd6680495459cef2fa6aeaa645, type: 3}
 --- !u!60 &7048754067308178085
 PolygonCollider2D:
   m_ObjectHideFlags: 0

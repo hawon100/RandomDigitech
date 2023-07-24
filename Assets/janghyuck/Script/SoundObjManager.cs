@@ -7,7 +7,6 @@ public class SoundObjManager : MonoBehaviour
 {
     public static SoundObjManager Instance { get; private set; }
     public AudioSource musicsource;
-    public AudioClip effectClip;
     public float musicvolume = 1;
     public float effectvolume = 1;
 
@@ -24,17 +23,5 @@ public class SoundObjManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    public void Sfx()
-    {
-        SoundManager._Instance.SFXPlay("Button", effectClip, effectvolume);
-    }
-
-    public void SetSFX(float volume)
-    {
-        SoundManager._Instance.SFXPlay("Button", effectClip, volume);
-
-        effectvolume = volume;
     }
 }

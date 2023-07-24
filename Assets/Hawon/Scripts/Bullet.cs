@@ -15,11 +15,11 @@ public class Bullet : MonoBehaviour
     {
         switch(collision.gameObject.name)
         {
-            case "Grapic": dmg = 2; break;
-            case "Programming": dmg = 3; break;
-            case "Plan": dmg = 5; break;
+            case "Grapic": dmg = 1; break;
+            case "Programming": dmg = 5; break;
+            case "Plan": dmg = 3; break;
             case "None": dmg = 0; break;
-            case "Study": dmg = 1; break;
+            case "Study": dmg = 6; break;
         }
     }
 

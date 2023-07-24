@@ -22,8 +22,6 @@ public class SpawnManager : MonoBehaviour
 
     public int enemyKillCount;
 
-    public int stage;
-
     private void Awake()
     {
         enemyKillCount = 0;
@@ -38,28 +36,31 @@ public class SpawnManager : MonoBehaviour
 
     private void EnemyCount()
     {
-        if(curEnemyCount != 30)
+        if (curEnemyCount % 30 != 0 || curEnemyCount == 0)
             return;
 
-        transform.position = pos[0].transform.position;
-
-        int ran = Random.Range(0, 3);
-
-        GameObject enemy = Instantiate(bossObj[ran], pos[0].position, Quaternion.identity);
-        Enemy enemyLogic = enemy.GetComponent<Enemy>();
-
-        for (int j = 0; j < pos.Length; j++)
+        for(int i = 0; i < 2; i++)
         {
-            if (enemyLogic.pos[j] == null)
+            transform.position = pos[0].transform.position;
+
+            int ran = Random.Range(0, 5);
+
+            GameObject enemy = Instantiate(bossObj[ran], pos[0].position, Quaternion.identity);
+            Enemy enemyLogic = enemy.GetComponent<Enemy>();
+
+            for (int j = 0; j < pos.Length; j++)
             {
-                enemyLogic.pos[j] = pos[j];
+                if (enemyLogic.pos[j] == null)
+                {
+                    enemyLogic.pos[j] = pos[j];
+                }
             }
+
+            //생성된 적을 리스트에 추가
+            enemies.Add(enemyLogic);
+
+            curEnemyCount++;
         }
-
-        //생성된 적을 리스트에 추가
-        enemies.Add(enemyLogic);
-
-        curEnemyCount++;
     }
 
     void SpawnWave()
@@ -74,7 +75,7 @@ public class SpawnManager : MonoBehaviour
         if (curSpawnDelay < maxSpawnDelay)
             return;
 
-        if (enemyKillCount > 30)
+        if (curEnemyCount % 30 == 0 && curEnemyCount != 0)
             return;
 
         for (int i = 0; i < enemyCount; i++)

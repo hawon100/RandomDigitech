@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject settingWin;
+    public AudioClip effectClip;
 
     private void Start()
     {
@@ -24,8 +25,8 @@ public class UIManager : MonoBehaviour
     {
         switch (name)
         {
-            case "Setting": settingWin.SetActive(true); break;
-            case "SettingClose": settingWin.SetActive(false); break;
+            case "Setting": settingWin.SetActive(true); SoundManager._Instance.SFXPlay("Button", effectClip); break;
+            case "SettingClose": settingWin.SetActive(false); SoundManager._Instance.SFXPlay("Button", effectClip); break;
         }
     }
 
